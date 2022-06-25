@@ -28,13 +28,5 @@ Feature: Users Management
         |username|password|
         |Admin|admin123|
 
-  Scenario Outline: invalid login
-    Given user navigates to orange website
-    When  user enters valid username "<username>" and password "<password>"
-    And   user clicks on login button
-    Then  user fails to login
-    Examples:
-      |username|password|
-      |admin|admin1234|
 
 
