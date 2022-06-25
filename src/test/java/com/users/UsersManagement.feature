@@ -6,8 +6,8 @@ Feature: Users Management
   @smokeTest @regression
   Scenario Outline: open users page successfully
 
-    Given user navigates to orange website <url>
-    When  user enters valid <username> and <password>
+    Given user navigates to orange website
+    When  user enters valid username "<username>" and password "<password>"
     And   user clicks on login button
     Then  user navigates to home page successfully
     When  user hover over admin Tab
@@ -16,6 +16,6 @@ Feature: Users Management
     Then  user navigates to users page successfully
 
     Examples:
-    |url|username|password|
-    |"https://opensource-demo.orangehrmlive.com/"|"Admin"|"admin123"|
+    |username|password|
+    |Admin|admin123|
 

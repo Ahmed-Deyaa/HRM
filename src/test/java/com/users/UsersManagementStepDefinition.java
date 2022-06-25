@@ -1,46 +1,31 @@
-package com.definitions;
+package com.users;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import com.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.UsersPage;
 
-public class UsersManagementStepDefinition  {
+public class UsersManagementStepDefinition extends BaseTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
     private UsersPage usersPage;
 
-    private  WebDriver driver;
 
-    @Before
-    public void setUpDriver(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    @Given("user navigates to orange website")
+    public void user_navigates_to_orange_website() {
 
-    }
-
-    @After
-    public void tearDownDriver(){
-        driver.quit();
-    }
-    @Given("user navigates to orange website {string}")
-    public void user_navigates_to_orange_website(String url)  {
         driver.get(url);
         loginPage = new LoginPage(driver);
+
         
     }
-    @When("user enters valid {string} and {string}")
-    public void user_enters_valid_and(String username, String password)  {
+    @When("user enters valid username {string} and password {string}")
+    public void user_enters_valid_username_and_password(String username, String password)  {
         loginPage.enterCredentials(username,password);
         
     }
