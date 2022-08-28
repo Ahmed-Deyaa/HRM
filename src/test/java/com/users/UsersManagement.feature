@@ -19,6 +19,7 @@ Feature: Users Management
     |username|password|
     |Admin|admin123|
 
+    @Login
     Scenario Outline: valid login
       Given user navigates to orange website
       When  user enters valid username "<username>" and password "<password>"

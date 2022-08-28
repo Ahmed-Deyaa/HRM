@@ -17,9 +17,10 @@ public class UsersManagementStepDefinition extends BaseTest {
 
 
     @Given("user navigates to orange website")
-    public void user_navigates_to_orange_website() {
+    public void user_navigates_to_orange_website() throws InterruptedException {
 
         driver.get(url);
+        Thread.sleep(10000);
         loginPage = new LoginPage(driver);
 
         

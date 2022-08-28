@@ -13,13 +13,13 @@ public class LoginPage extends BasePage{
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(id = "txtUsername")
+    @FindBy(name = "username")
     private WebElement usernameField;
 
-    @FindBy(id = "txtPassword")
+    @FindBy(name = "password")
     private WebElement passwordField;
 
-    @FindBy(id = "btnLogin")
+    @FindBy(tagName = "button")
     private WebElement loginButton;
 
     @FindBy(id = "spanMessage")
